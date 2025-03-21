@@ -1,35 +1,39 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { Routes, Route } from "react-router-dom";
+import Sidebar from "@/components/Sidebar";
+import Story from "@/components/Story";
+import Home from "@/pages/Home";
+import About from "@/pages/About";
+import Projects from "@/pages/Projects";
+import Board from "@/pages/Board";
+import "@/styles/global.css";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <div className="app-container">
+      {/* 🔥 왼쪽 사이드바 (목록) */}
+      <div className="sidebar">
+        <Sidebar />
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
+
+      {/* 🔥 스토리 + 메인 컨텐츠 */}
+      <div className="content-wrapper">
+        {/* 스토리 (최상단 고정) */}
+        <div className="story-container">
+          <Story />
+        </div>
+
+        {/* 메인 컨텐츠 */}
+        <div className="main-content">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/projects" element={<Projects />} />
+            <Route path="/board" element={<Board />} />
+          </Routes>
+        </div>
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    </div>
+  );
 }
 
-export default App
+export default App;

@@ -1,0 +1,38 @@
+/* 스토리 컨테이너 */
+.story-container {
+    display: flex;
+    justify-content: center; /* ✅ 연도 버튼 중앙 정렬 */
+    gap: 1.5vw; /* ✅ 버튼 사이 간격을 vw로 설정 */
+    width: 100%; /* ✅ 컨테이너 전체 너비 */
+    padding: 1.5vh 2vw; /* ✅ 상하좌우 패딩을 vh, vw로 변경 */
+    max-width: 100%;
+}
+
+/* 스토리 아이템 (연도 버튼) */
+.story-item {
+    width: 6vw; /* ✅ 버튼 크기를 화면 비율에 맞게 설정 */
+    height: 6vw;
+    max-width: 80px; /* ✅ 너무 커지지 않도록 제한 */
+    max-height: 80px;
+    border-radius: 50%; /* ✅ 완벽한 원형 유지 */
+    border: 0.3vh solid gray;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1vw; /* ✅ 텍스트 크기도 반응형 */
+    font-weight: bold;
+    color: white;
+    background-color: black;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out, transform 0.1s ease-in-out;
+}
+
+.story-item:hover {
+    transform: scale(1.1);
+}
+
+.story-item.active {
+    background-color: #007bff;
+    border-color: #0056b3;
+    transform: scale(1.15);
+}
