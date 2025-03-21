@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "../styles/story.css"; // ✅ CSS 적용
 
-const years = ["2022", "2023", "2024", "2025"];
+const years = ["현대 오토에버", "해커톤","2024 한이음", "2023 한이음", "2022 교내 프로젝트", "개인 프로젝트"];
 
 const Story = () => {
   const [activeYear, setActiveYear] = useState<string | null>(null);

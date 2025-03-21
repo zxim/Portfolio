@@ -1,56 +1,70 @@
-/* 전체 레이아웃 */
+/* ✅ 전체 레이아웃 */
 .app-container {
     display: flex;
     height: 100vh;
     background-color: #fafafa;
 }
 
-/* 왼쪽 고정된 사이드바 (목록) */
+/* ✅ 왼쪽 고정된 사이드바 */
 .sidebar {
-    width: 18vw;  /* ✅ 전체 너비의 18% 차지 */
-    min-width: 200px; /* ✅ 최소 너비 지정 (너무 작아지지 않게) */
-    max-width: 280px; /* ✅ 최대 너비 지정 */
-    height: 100vh;
+    width: 18vw; /* 📌 기본적으로 화면의 18% 차지 */
+    min-width: 200px; /* 📌 최소 너비 */
+    max-width: 280px; /* 📌 최대 너비 */
+    height: 100vh; /* 📌 전체 높이 */
     position: fixed;
     left: 0;
     top: 0;
     background-color: white;
-    padding: 2vh 1.5vw; /* ✅ 패딩을 vh, vw로 조정 */
+    padding: 2vh 1.5vw;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    border-right: 0.2vh solid #ddd; /* ✅ 보더도 반응형 */
+    border-right: 1px solid #ddd;
 }
 
-/* 스토리 + 메인 컨텐츠 전체 감싸는 박스 */
+/* ✅ 스토리 + 메인 컨텐츠 감싸는 박스 */
 .content-wrapper {
-    margin-left: 18vw; /* ✅ 사이드바만큼 밀기 */
-    width: calc(100vw - 18vw);
+    margin-left: 18vw; /* 📌 사이드바 크기만큼 이동 */
+    width: calc(100vw - 18vw); /* 📌 사이드바 제외한 나머지 영역 */
+    min-width: 600px; /* 📌 최소 너비 지정 */
     display: flex;
     flex-direction: column;
 }
 
-/* 스토리 부분 */
+/* ✅ 스토리 영역 */
 .story-container {
-    width: 100%; /* ✅ 전체 너비 */
-    height: 10vh; /* ✅ 높이를 vh로 조정 */
+    width: 100%;
+    min-width: 600px; /* 📌 스토리 최소 너비 */
+    height: 12vh; /* 📌 스토리 높이 */
     background-color: white;
     display: flex;
     align-items: center;
-    margin-top: 5px;
-    justify-content: flex-start; /* ✅ 왼쪽 정렬 */
-    padding-left: 2vw; /* ✅ 패딩 조정 */
-
-    /* ✅ 검은색 선 & 그림자 제거 */
-    border-bottom: none;
-    box-shadow: none;
+    justify-content: flex-start;
+    padding-left: 2vw;
 }
 
-/* 메인 컨텐츠 */
+/* ✅ 메인 컨텐츠 */
 .main-content {
     flex-grow: 1;
-    padding: 5vh 5vw; /* ✅ 전체 비율 유지 */
+    width: 100%;
+    min-width: 600px; /* 📌 최소 너비 */
+    height: calc(100vh - 12vh); /* 📌 스토리 제외한 나머지 높이 */
+    padding: 5vh 5vw;
+    background-color: white;
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
+    overflow-y: auto; /* 📌 내용이 많으면 스크롤 */
+}
+
+/* ✅ 반응형 웹 - 작은 화면 대응 */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 25vw; /* 📌 작은 화면에서 사이드바 크기 증가 */
+    }
+    .content-wrapper {
+        margin-left: 25vw; /* 📌 사이드바 크기만큼 이동 */
+        width: calc(100vw - 25vw);
+        min-width: 500px;
+    }
 }

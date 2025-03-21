@@ -10,7 +10,7 @@ const Sidebar = () => {
         <h2 className="logo">📷 Portfolio</h2>
         <nav>
           <Link to="/" className={`nav-item ${location.pathname === "/" ? "active" : ""}`}>
-            🏠 홈
+            🏠 Home
           </Link>
           <Link to="/about" className={`nav-item ${location.pathname === "/about" ? "active" : ""}`}>
             👤 About
