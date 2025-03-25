@@ -2,7 +2,7 @@
 .app-container {
     display: flex;
     height: 100vh;
-    background-color: #fafafa;
+    background-color: white;
 }
 
 /* ✅ 왼쪽 고정된 사이드바 */
