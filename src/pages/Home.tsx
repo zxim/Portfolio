@@ -39,7 +39,8 @@ const Home = () => {
 
       {/* 🔗 링크 */}
       <div className="mt-6 space-y-2">
-        <div>
+        <div className="flex items-center space-x-2">
+          <img src="/github.png" alt="GitHub" style={{ width: '22px', height: '22px', objectFit: 'contain', top: '5px', position: 'relative', marginRight: '6px' }} />
           <span className="font-semibold text-gray-600">GitHub: </span>
           <a
             href="https://github.com/zxim"
@@ -47,10 +48,11 @@ const Home = () => {
             rel="noopener noreferrer"
             className="text-blue-500 hover:underline"
           >
-            https://github.com/zxim
-          </a>
+             https://github.com/zxim
+          </a><br />
         </div>
-        <div>
+        <div className="flex items-center space-x-2">
+          <img src="/velog.PNG" alt="velog" style={{ width: '22px', height: '22px', objectFit: 'contain', top: '5px', position: 'relative', marginRight: '6px' }} />
           <span className="font-semibold text-gray-600">Velog: </span>
           <a
             href="https://velog.io/@tlaals44/series"
@@ -58,16 +60,17 @@ const Home = () => {
             rel="noopener noreferrer"
             className="text-green-500 hover:underline"
           >
-            https://velog.io/@tlaals44/series
-          </a>
+             https://velog.io/@tlaals44/series
+          </a><br />
         </div>
-        <div>
+        <div className="flex items-center space-x-2">
+          <img src="/email.png" alt="Email" style={{ width: '22px', height: '22px', objectFit: 'contain', top: '5px', position: 'relative', marginRight: '6px' }} />
           <span className="font-semibold text-gray-600">Email: </span>
           <a
             href="mailto:tlaals44@naver.com"
             className="text-red-500 hover:underline"
           >
-            tlaals44@naver.com
+             tlaals44@naver.com
           </a>
         </div>
       </div>
